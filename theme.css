@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap');
 :root{
+  --carousel-caption-gap:1rem; /* ruimte tussen afbeelding en tekst in een carousel-kaart */
   --grad:linear-gradient(135deg,#15803D 0%,#2F9E5C 45%,#48BB78 100%);
   --grad-soft:linear-gradient(135deg,rgba(21,128,61,0.1),rgba(47,158,92,0.1) 45%,rgba(72,187,120,0.1));
   --purple:#0D2E1B;--purple-600:#2b3149;--purple-50:#eef0f6;--purple-900:#141726;
@@ -267,4 +268,7 @@ body{max-width:1500px;margin-inline:auto;overflow-x:clip}
 .carousel>*{flex:0 0 auto;scroll-snap-align:start;width:min(320px,74vw)}
 .carousel img{width:100%;aspect-ratio:var(--carousel-ar,3/2);height:auto;object-fit:cover;border-radius:14px;display:block;box-shadow:var(--shadow-md)}
 .carousel figure{margin:0}
-.carousel figcaption{font-size:.85rem;color:var(--n500);margin-top:.5rem;text-align:center}
+.carousel figcaption{font-size:.85rem;color:var(--n500);margin-top:var(--carousel-caption-gap);text-align:center}
+/* Kaart-variant (afbeelding + titel/tekst): duw de tekst een stukje onder de
+   afbeelding. Instelbaar via de theme-variabele --carousel-caption-gap. */
+.carousel .card-body{margin-top:var(--carousel-caption-gap)}
